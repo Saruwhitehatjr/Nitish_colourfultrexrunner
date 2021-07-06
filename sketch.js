@@ -53,6 +53,7 @@ function setup() {
 
   ground = createSprite(200, 180, width + 1000, 20);
   ground.addImage("ground", groundImage);
+  ground.scale=2
   ground.x = ground.width / 2;
   ground.velocityX = -(6 + (3 * score) / 100);
   ground.depth = 0;
@@ -97,7 +98,7 @@ function draw() {
       touches = [];
     }
 
-    console.log(trex.y);
+    //console.log(trex.y);
 
     trex.velocityY = trex.velocityY + 0.8;
 
@@ -178,7 +179,7 @@ function spawnClouds() {
 
 function spawnObstacles() {
   if (frameCount % 60 === 0) {
-    var obstacle = createSprite(600, height - 365, 10, 40);
+    var obstacle = createSprite(600, Math.round(random(20,height - 30)), 10, 40);
     //obstacle.debug = true;
     obstacle.velocityX = -(6 + (3 * score) / 100);
 
